@@ -332,6 +332,23 @@ csctf2ttDEPS2Maker = cms.EDProducer(
     etaParPt2In = cms.double(0.400),
 )
 
+l1tkmu2ttDRMaker = cms.EDProducer(
+    "IdxByDRMaker",
+    aliasPrefix = cms.string("l1tkmu_tt_dr"),
+    pt1InputTag = cms.InputTag("l1tkmusCandMaker:l1tkmuspt"),
+    eta1InputTag = cms.InputTag("l1tkmusCandMaker:l1tkmuseta"),
+    phi1InputTag = cms.InputTag("l1tkmusCandMaker:l1tkmusphi"),
+        pt2InputTag = cms.InputTag("ttMaker:ttspt"),
+    eta2InputTag = cms.InputTag("ttMaker:ttstfs2eta"),
+    phi2InputTag = cms.InputTag("ttMaker:ttstfs2phi"),
+
+    useDr = cms.bool(True),
+
+    drParConst = cms.double(0.01),
+    drParPt1In = cms.double(0),
+    drParPt2In = cms.double(0)
+)
+
 idxByDRMakers = cms.Sequence(
     sim2gmtDRS2Maker
     + sim2gmtDEPS2Maker
@@ -351,4 +368,5 @@ idxByDRMakers = cms.Sequence(
     + gmt2ttDEPS2Maker
     + csctf2ttDRS2Maker
     + csctf2ttDEPS2Maker
+    + l1tkmu2ttDRMaker
     )
