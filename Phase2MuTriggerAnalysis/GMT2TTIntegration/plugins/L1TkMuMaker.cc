@@ -15,8 +15,8 @@
 
 #include "SimDataFormats/SLHC/interface/StackedTrackerTypes.h"
 #include "DataFormats/L1TrackTrigger/interface/TTTypes.h"
-#include "DataFormats/L1TrackTrigger/interface/L1TkElectronParticle.h"
-#include "DataFormats/L1TrackTrigger/interface/L1TkElectronParticleFwd.h"
+#include "DataFormats/L1TrackTrigger/interface/L1TkMuonParticle.h"
+#include "DataFormats/L1TrackTrigger/interface/L1TkMuonParticleFwd.h"
 
 #include "etaPhiPropagators.h"
 
