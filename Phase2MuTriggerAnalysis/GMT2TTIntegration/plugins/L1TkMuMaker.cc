@@ -80,9 +80,9 @@ void L1TkMuMaker::produce(edm::Event& ev, const edm::EventSetup& es){
   ev.getByLabel(l1tkmuInputTag, ttH);
   const L1TkMuonParticleCollection& tts(*ttH.product());
 
-  for (L1TkMuonParticle & l1tkmu : tts){
-  	L1MuonParticleExtendedRef & l1mu_ref = l1tkmu.getMuExtendedRef();
-  	L1MuRegionalCand & cscCand = l1mu_ref.get()->cscCand();
+  for (const L1TkMuonParticle & l1tkmu : tts){
+  	const L1MuonParticleExtendedRef & l1mu_ref = l1tkmu.getMuExtendedRef();
+  	const L1MuRegionalCand & cscCand = l1mu_ref.get()->cscCand();
 
   	bool is_good = true;
 
